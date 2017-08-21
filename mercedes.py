@@ -196,37 +196,7 @@ newdf_xtest=x_test[['X127','X54','X0_az','X261','X263','X136','X29','X76','X238'
                       'X316','X315','X328','X232','X115','X118','X279','X314','X119','X311',
                       'X313','X275','X348']]
 
-from xgboost import XGBRegressor
-regressor = XGBRegressor(n_estimators=200,learning_rate=0.05)
-regressor=regressor.fit(newdf_xtrain, newdf_ytrain)
-
-# Predicting the Test set results
-predictions1 = regressor.predict(newdf_xtest)
-
-
-from sklearn.ensemble import RandomForestRegressor
-regressor1 = RandomForestRegressor(n_estimators = 200, random_state = 42)
-regressor1.fit(newdf_xtrain, newdf_ytrain)
-# Predicting the Test set results
-predictions2 = regressor1.predict(newdf_xtest)
-
-
-from sklearn.ensemble import ExtraTreesRegressor
-regressor2=ExtraTreesRegressor(n_estimators=200,random_state=42)
-regressor2.fit(newdf_xtrain,newdf_ytrain)
-predictions3 = regressor2.predict(newdf_xtest)
-
-
-import lightgbm as lgb
-gbm = lgb.LGBMRegressor(objective='regression',learning_rate=0.05,max_depth=3,n_estimators=150)
-gbm.fit(newdf_xtrain, newdf_ytrain)
-# predict
-predictions4 = gbm.predict(newdf_xtest)
-
-from sklearn.ensemble import GradientBoostingRegressor
-gbr = GradientBoostingRegressor(n_estimators=200,max_depth=3,learning_rate=0.05)
-gbr=gbr.fit(newdf_xtrain, newdf_ytrain)
-predictions5 = (gbr.predict(newdf_xtest))
+/*Model selection and validation hidden for confidentiality purposes*/
 
 
 #average of xgb, Light GBM and Gradient Boosting Regressor
